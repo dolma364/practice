@@ -34,7 +34,7 @@ section#map {
 	background: #cccccc;
 }
 
-section#map2 {	
+section.show {	
 	position: fixed;
 	top: 40% ;
 	left: 20% ;

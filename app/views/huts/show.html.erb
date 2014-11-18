@@ -1,15 +1,13 @@
 
 <section class="hut">
-<h2><%= @hut.serial %></h2>
+  <h2><%= @hut.serial %></h2>
 
-<div class="location"><p><%= @hut.longitude %>, <%= @hut.latitude %></p></div>
+  <div class="location"><p><%= @hut.longitude %>, <%= @hut.latitude %></p></div>
 
 
-<div class="map" data-lat="<%= @hut.latitude %>" data-lng="<%= @hut.longitude %>">
-</div>
-<%= simple_format @hut.comments %>
+  <section class="map show" data-lat="<%= @hut.latitude %>" data-lng="<%= @hut.longitude %>"></section>
+  <%= simple_format @hut.comments %>
 
 
 </section>
 
-<section id="map2"> </section>
