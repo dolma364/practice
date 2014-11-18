@@ -1,0 +1,29 @@
+<h1>Huts#index</h1>
+<p>Find me in app/views/huts/index.html.erb</p>
+
+
+
+
+<ul>
+<% @huts.each do |hut| %>
+
+	<section class="hut">
+
+		<%= link_to root_path(search: { q: hut.serial }) do %>
+	
+			<li data-lat="<%= hut.latitude %>" data-lng="<%= hut.longitude %>" >
+			<p><%= hut.serial %> </p> 
+			<p><%= hut.longitude %> </p> 
+			<p><%= hut.latitude %> </p></li>
+			
+		<% end %>
+		
+	</section>
+
+<% end %>
+
+</ul>
+
+
+
+<section id="map"> </section>
