@@ -8,7 +8,29 @@
 </head>
 <body>
 
+<header>
+	<nav>
+		<h1><%= link_to "Huttracker", root_path %></h1>
+
+		<h2>Remote information on outdoor huts</h2> </br>
+		</br>
+		
+	</nav>
+
+
+
+</header>
+
+<% flash.each do |key, value| %>
+	<div class="<%= key %>">
+		<p><%= value %></p>
+	</div>
+<% end %>
+
+
 <%= yield %>
+
+<h> 
 
 </body>
 </html>

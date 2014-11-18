@@ -1,0 +1,15 @@
+<% @hut.errors.full_messages %>
+
+<%= simple_form_for @hut do |form| %>
+	
+
+
+	<%= form.input :serial  %>
+	<%= form.input :latitude  %>
+	<%= form.input :longitude  %>
+	<%= form.input :comments  %>
+
+
+	<%= form.button :submit %>
+
+<% end %>

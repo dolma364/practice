@@ -1,6 +1,3 @@
-<h1>Huts#index</h1>
-<p>Find me in app/views/huts/index.html.erb</p>
-
 
 
 
@@ -9,14 +6,13 @@
 
 	<section class="hut">
 
-		<%= link_to root_path(search: { q: hut.serial }) do %>
+		
 	
 			<li data-lat="<%= hut.latitude %>" data-lng="<%= hut.longitude %>" >
-			<p><%= hut.serial %> </p> 
-			<p><%= hut.longitude %> </p> 
-			<p><%= hut.latitude %> </p></li>
+			<p>Serial Number: <%= hut.serial %> </p> 
+			<p>Setup by: <%= hut.user_ID %> </p></li>
 			
-		<% end %>
+	
 		
 	</section>
 
@@ -27,3 +23,5 @@
 
 
 <section id="map"> </section>
+
+<%= link_to "Add a Hut", new_hut_path, class: 'button' %>
