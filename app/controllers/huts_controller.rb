@@ -9,6 +9,7 @@ class HutsController < ApplicationController
 
 
   def show
+  	    @hut = Hut.find(params[:id])
   end
 
 

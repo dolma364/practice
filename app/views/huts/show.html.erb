@@ -1,4 +1,15 @@
-<h1>Huts#show</h1>
-<p>Find me in app/views/huts/show.html.erb</p>
+
+<section class="hut">
+<h2><%= @hut.serial %></h2>
+
+<div class="location"><p><%= @hut.longitude %>, <%= @hut.latitude %></p></div>
 
 
+<div class="map" data-lat="<%= @hut.latitude %>" data-lng="<%= @hut.longitude %>">
+</div>
+<%= simple_format @hut.comments %>
+
+
+</section>
+
+<section id="map2"> </section>

@@ -1,8 +1,6 @@
 $(document).ready(function () {
 
 
-	// data for falafel shops in london
-	// co-ordinates are easiest to get from bing maps
 	var stores = [];
 
 	$("ul li").each(function () {
@@ -30,7 +28,7 @@ $(document).ready(function () {
 
 		var markerIcon = L.icon({
 			iconUrl: "/assets/" + store.color + "marker.png",
-			iconSize: [60, 60],
+			iconSize: [40, 40],
 			iconAnchor: [30, 60],
 			popupAnchor: [0, -70]
 		});
@@ -47,7 +45,7 @@ $(document).ready(function () {
 
 
   if(bounds._northEast === undefined){
-    map.fitBounds(bounds.extend([51.525319, -0.110153]));
+    map.fitBounds(bounds.extend([-35.281086, 174.090882]));
   } else {
     map.fitBounds(bounds);
   }
@@ -56,3 +54,6 @@ $(document).ready(function () {
 
 
 });
+
+
+
