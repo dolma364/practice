@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= params[:action] %>">
 
 <header>
 	<nav>
@@ -14,7 +14,7 @@
 
 		<h2>Remote information on outdoor huts</h2> </br>
 		</br>
-		
+
 	</nav>
 
 
@@ -30,7 +30,7 @@
 
 <%= yield %>
 
-<h> 
+<h>
 
 </body>
 </html>

@@ -6,15 +6,15 @@
 
 	<section class="hut">
 
-		
+
 		<%= link_to root_path(search: { q: hut.serial }) do %>
-	
+
 			<li data-lat="<%= hut.latitude %>" data-lng="<%= hut.longitude %>" >
-			<p>Serial Number: <%= hut.serial %> </p> 
+			<p>Serial Number: <%= hut.serial %> </p>
 			<p>Setup by: <%= hut.user_ID %> </p></li>
-			
+
 	<% end %>
-		
+
 	</section>
 
 <% end %>
@@ -23,6 +23,6 @@
 
 
 
-<section id="map"> </section>
+<section class="map"></section>
 
 <%= link_to "Add a Hut", new_hut_path, class: 'button' %>

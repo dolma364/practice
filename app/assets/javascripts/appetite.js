@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  return $('.map').each(function() {
+function ready() {
+  return $('section.map').each(function() {
     $(this).attr("id", "map-" + Math.random().toString().replace("0.", ""));
     var map_id = $(this).attr("id");
 
@@ -7,16 +7,27 @@ $(document).ready(function () {
 
     var stores = [];
 
-    $("ul li").each(function () {
+    if ($('body').hasClass('show')) {
+      var show_store = {};
+      show_store.location = [$(this).data("lat"), $(this).data("lng")];
+      show_store.title = $(this).find("h3").text();
+      show_store.address = $(this).find("p").text();
+      show_store.color = "red";
+      stores.push(show_store);
+    } else if ($('body').hasClass('index')) {
+      console.log("word");
 
-      var store = {};
-      store.location = [$(this).data("lat"), $(this).data("lng")];
-      store.title = $(this).find("h3").text();
-      store.address = $(this).find("p").text();
-      store.color = "red";
-      stores.push(store);
+      $("ul li").each(function () {
 
-    });
+        var store = {};
+        store.location = [$(this).data("lat"), $(this).data("lng")];
+        store.title = $(this).find("h3").text();
+        store.address = $(this).find("p").text();
+        store.color = "red";
+        stores.push(store);
+
+      });
+    }
 
     // mapbox tiles
     var mapTiles = "https://a.tiles.mapbox.com/v3/steer.ijbel9hk/{z}/{x}/{y}.png";
@@ -57,7 +68,7 @@ $(document).ready(function () {
 
   });
 
-});
+}
 
-
-
+$(document).ready(ready);
+$(document).on('page:load', ready);
